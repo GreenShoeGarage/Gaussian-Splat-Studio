@@ -1,22 +1,20 @@
-# Maker Splat
+# Maker Splat 3.1 Release Candidate
 
-A simple local browser app for everyday makers who want to turn a video or photo set into a Gaussian splat.
+Maker Splat is a local browser/desktop-style maker app for generating Gaussian splats from videos or photo sets.
 
-No accounts. No cloud. No billing. No enterprise stack.
+3.1 is a release-candidate reliability pass over 3.0.
 
-## What it does
+## What changed in 3.1
 
-Open a browser, upload a video or images, click **Generate**, preview/download the result.
+- Restored the full project workflow UI around the 3.0 real-mode backend
+- Added backend syntax validation notes
+- Added a safer QA script that checks Python syntax before tests
+- Added a frontend build sanity path
+- Improved real-mode setup messaging
+- Kept GPU/Nerfstudio Docker profile
+- Kept Demo Mode for normal computers
 
-```text
-Upload video/photos
-  -> extract frames if video
-  -> run Nerfstudio splatfacto if installed
-  -> export result
-  -> preview/download
-```
-
-## Quick start
+## Demo mode
 
 ```bash
 docker compose up --build
@@ -28,41 +26,36 @@ Open:
 http://localhost:5173
 ```
 
-## Real splat generation
+## Real GPU/Nerfstudio mode
 
-For real splats, the backend machine needs:
+```bash
+MAKER_SPLAT_REAL_MODE=1 docker compose -f docker-compose.yml -f docker-compose.gpu.yml up --build
+```
 
+Then open:
+
+```text
+http://localhost:5173
+```
+
+## QA
+
+```bash
+./qa/run-all.sh
+```
+
+## Real-mode expectations
+
+Real mode requires:
+
+- NVIDIA GPU
+- NVIDIA Container Toolkit
+- compatible host NVIDIA driver
 - ffmpeg
 - COLMAP
 - Nerfstudio
-- CUDA GPU recommended
+- `ns-process-data`
+- `ns-train`
+- `ns-export`
 
-Enable real generation:
-
-```bash
-GSS_REAL_MODE=1 docker compose up --build
-```
-
-Without real mode, Maker Splat runs a friendly demo/fallback path so the app can be tested.
-
-## Good input tips
-
-Use a short video or 30–150 photos.
-
-Best results:
-
-- walk slowly around the object or space
-- keep the subject in frame
-- avoid motion blur
-- use good lighting
-- avoid shiny/transparent objects
-
-## Output
-
-Generated files appear in:
-
-```text
-backend/runs/
-```
-
-The UI exposes downloads for available artifacts.
+Start with **Balanced** quality on a dataset of 30–150 overlapping images.

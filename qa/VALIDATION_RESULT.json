@@ -1,0 +1,11 @@
+{
+  "python_syntax": {
+    "errors.py": "ok",
+    "preflight.py": "ok",
+    "server.py": "ok",
+    "pipeline.py": "ok",
+    "fallback_splat.py": "ok",
+    "quality.py": "ok"
+  },
+  "notes": []
+}

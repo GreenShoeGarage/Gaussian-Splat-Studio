@@ -1,0 +1,23 @@
+{
+  "name": "maker-splat-desktop",
+  "version": "3.0.0",
+  "private": true,
+  "main": "main.js",
+  "scripts": {
+    "dev": "electron .",
+    "dist": "electron-builder"
+  },
+  "dependencies": {
+    "electron": "latest"
+  },
+  "devDependencies": {
+    "electron-builder": "latest"
+  },
+  "build": {
+    "appId": "studio.makersplat.app",
+    "productName": "Maker Splat",
+    "files": ["main.js"],
+    "mac": {"category": "public.app-category.graphics-design"},
+    "win": {"target": "nsis"}
+  }
+}

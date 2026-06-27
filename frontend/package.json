@@ -1,16 +1,1 @@
-{
-  "name": "maker-splat",
-  "version": "1.0.0",
-  "private": true,
-  "scripts": {
-    "dev": "vite"
-  },
-  "dependencies": {
-    "@vitejs/plugin-react": "latest",
-    "vite": "latest",
-    "react": "latest",
-    "react-dom": "latest",
-    "three": "latest",
-    "@react-three/fiber": "latest"
-  }
-}
+{"name":"maker-splat","version":"3.0.0","private":true,"scripts":{"dev":"vite","build":"vite build"},"dependencies":{"@mkkellogg/gaussian-splats-3d":"latest","@vitejs/plugin-react":"latest","vite":"latest","react":"latest","react-dom":"latest","three":"latest","@react-three/fiber":"latest"}}
