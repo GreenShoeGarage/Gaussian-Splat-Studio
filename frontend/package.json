@@ -1,8 +1,11 @@
 {
- "scripts":{"dev":"vite"},
+ "scripts":{
+  "dev":"vite"
+ },
  "dependencies":{
-  "vite":"latest",
   "react":"latest",
-  "react-dom":"latest"
+  "react-dom":"latest",
+  "vite":"latest",
+  "three":"latest"
  }
 }

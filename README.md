@@ -1,11 +1,18 @@
-# Gaussian Splat Studio v3
+# Gaussian Splat Studio v5
 
-Adds a production pipeline layout:
+Adds:
+- real pipeline stages
+- background worker abstraction
+- viewer integration layer
+- training configuration
 
-- API server
-- GPU worker abstraction
-- Gaussian trainer interface
-- React UI
-- viewer integration point
+Architecture:
 
-The `trainer.py` module is where gsplat / nerfstudio optimization can be connected.
+Upload
+ -> preprocess
+ -> reconstruction
+ -> gaussian optimization
+ -> export
+ -> viewer
+
+The optimizer module is designed to be replaced with gsplat.
