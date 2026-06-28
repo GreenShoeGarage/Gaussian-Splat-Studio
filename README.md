@@ -1,23 +1,30 @@
-# Maker Splat — MVP Candidate
+# Maker Splat
 
-This release implements the eight MVP areas needed for a credible first public build:
+**Maker Splat** is a local-first browser app for turning phone captures into 3D Gaussian splat projects.
 
-1. Real reconstruction pipeline
-2. Dependency installation/checking
-3. Guided capture workflow
-4. Robust job handling
-5. Built-in viewer
-6. Simple export
-7. Plain-language error reporting
-8. Cross-platform packaging scaffolds
+This repository is the consolidated **v1.0.0 MVP Candidate**.
 
-## Important status
+## Current MVP Status
 
-This is an **MVP candidate**, not a guaranteed production `.splat` generator on every machine.
+Maker Splat includes:
 
-The app now has the operational structure needed to produce and verify real splats, but actual `.splat` output still depends on a working Nerfstudio/COLMAP/CUDA environment and real test validation.
+- browser GUI
+- project workflow
+- Capture Coach
+- Demo Engine
+- Nerfstudio Engine integration layer
+- real-mode diagnostics
+- dependency doctor
+- failure classification
+- validation reports
+- built-in viewer
+- export bundles
+- phone upload
+- documentation suite
 
-## Quick start
+The remaining blocker for MVP confidence is repeated validation of real `.splat` output on a known-good Nerfstudio/CUDA environment.
+
+## Quick Start
 
 ```bash
 docker compose up --build
@@ -35,35 +42,53 @@ http://localhost:5173
 MAKER_SPLAT_ENGINE=nerfstudio MAKER_SPLAT_REAL_MODE=1 docker compose up --build
 ```
 
-## First verified splat run
+## First Verified Splat Run
 
-Add 40–80 photos to:
+Place 40–80 photos in:
 
 ```text
 datasets/first-splat/images/
 ```
 
-Then run:
+Run:
 
 ```bash
 ./qa/run-real-mode-dataset.sh datasets/first-splat
 ```
 
-## MVP checks
+Success requires:
 
-```bash
-./qa/mvp-check.sh
+```json
+"real_splat_verified": true
 ```
 
-## Packaging
+inside `validation_manifest.json`.
 
-Packaging scaffolds are in:
+## Documentation
+
+Start here:
+
+- [Documentation Index](docs/README.md)
+- [Quick Start](docs/QUICK_START.md)
+- [Installation](docs/INSTALLATION.md)
+- [User Manual](docs/USER_MANUAL.md)
+- [Capture Guide](docs/CAPTURE_GUIDE.md)
+- [Real Mode](docs/REAL_MODE.md)
+- [Troubleshooting](docs/TROUBLESHOOTING.md)
+- [Developer Guide](docs/DEVELOPER_GUIDE.md)
+
+## Project Structure
 
 ```text
-packaging/
-  macos/
-  windows/
-  linux/
+backend/       FastAPI backend
+frontend/      React/Vite frontend
+docs/          full Markdown documentation suite
+qa/            validation and test scripts
+datasets/      test dataset folders
+packaging/     installer scaffolds
+scripts/       command-line helpers
 ```
 
-They are starter scripts/specs, not signed production installers.
+## License
+
+MIT
