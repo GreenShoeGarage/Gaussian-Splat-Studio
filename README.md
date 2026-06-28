@@ -91,4 +91,16 @@ scripts/       command-line helpers
 
 ## License
 
-MIT
+GNU GPLv3
+
+<img width="1438" height="796" alt="Screenshot 2026-06-28 at 6 50 49 AM" src="https://github.com/user-attachments/assets/288d972b-a51e-4122-bc16-27bacb1615e4" />
+
+<img width="1443" height="786" alt="Screenshot 2026-06-28 at 6 51 07 AM" src="https://github.com/user-attachments/assets/305e299d-c1ba-4277-a85d-6949b082d502" />
+
+<img width="1450" height="786" alt="Screenshot 2026-06-28 at 6 51 17 AM" src="https://github.com/user-attachments/assets/f5a61431-0dfe-4e55-aec8-5245f9ee0edd" />
+
+<img width="1447" height="794" alt="Screenshot 2026-06-28 at 6 51 31 AM" src="https://github.com/user-attachments/assets/5d359b2b-4f51-4e79-bf6d-47fcef7dc1a9" />
+
+<img width="1448" height="794" alt="Screenshot 2026-06-28 at 6 51 40 AM" src="https://github.com/user-attachments/assets/b1c045c2-b1d2-4d47-8a50-08408e1fe783" />
+
+
