@@ -1,16 +1,26 @@
 def friendly_error(exc: Exception) -> str:
     text = str(exc)
+    low = text.lower()
 
-    if "ffmpeg" in text.lower() and ("not found" in text.lower() or "no such file" in text.lower()):
-        return "ffmpeg is missing. Install ffmpeg or use the Docker version of Maker Splat."
+    if "generation canceled" in low:
+        return "No problem — generation was canceled."
 
-    if "ns-train" in text or "ns-process-data" in text or "ns-export" in text or "Nerfstudio" in text:
-        return "Nerfstudio is missing or failed. Use Demo Mode, or install Nerfstudio/COLMAP for real splats."
+    if "need at least 3" in low:
+        return "This capture is too short. Add more photos or use a longer, slower video."
 
-    if "Need at least 3" in text:
-        return "Not enough images. Upload at least 3 photos or use a longer video."
+    if "ffmpeg" in low:
+        return "Maker Splat could not turn your video into photos. Try a different video, or make sure FFmpeg is available."
 
-    if "CUDA" in text or "cuda" in text or "nvidia" in text.lower():
-        return "CUDA/GPU is unavailable. Real splats need a properly configured NVIDIA GPU, or use Demo Mode."
+    if "nerfstudio tools missing" in low or "ns-process-data" in text or "ns-train" in text or "ns-export" in text or "nerfstudio" in low:
+        return "Real Mode is not ready. Open Settings → Engines to see which Nerfstudio/COLMAP tools are missing, or switch back to Demo Engine."
 
-    return text or "Something went wrong while generating the splat."
+    if "colmap" in low:
+        return "COLMAP is missing or failed. Real splats need COLMAP for camera tracking."
+
+    if "cuda" in low or "nvidia" in low:
+        return "GPU/CUDA is unavailable. Real splats work best with a configured NVIDIA CUDA GPU."
+
+    if "no .ply or .splat" in low:
+        return "The real engine finished, but no preview file was exported. Check the diagnostics bundle and Nerfstudio version."
+
+    return text or "Something went wrong. Try again with a slower video or more photos."

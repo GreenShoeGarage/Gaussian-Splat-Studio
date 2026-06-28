@@ -1,20 +1,23 @@
-# Maker Splat 3.1 Release Candidate
+# Maker Splat — MVP Candidate
 
-Maker Splat is a local browser/desktop-style maker app for generating Gaussian splats from videos or photo sets.
+This release implements the eight MVP areas needed for a credible first public build:
 
-3.1 is a release-candidate reliability pass over 3.0.
+1. Real reconstruction pipeline
+2. Dependency installation/checking
+3. Guided capture workflow
+4. Robust job handling
+5. Built-in viewer
+6. Simple export
+7. Plain-language error reporting
+8. Cross-platform packaging scaffolds
 
-## What changed in 3.1
+## Important status
 
-- Restored the full project workflow UI around the 3.0 real-mode backend
-- Added backend syntax validation notes
-- Added a safer QA script that checks Python syntax before tests
-- Added a frontend build sanity path
-- Improved real-mode setup messaging
-- Kept GPU/Nerfstudio Docker profile
-- Kept Demo Mode for normal computers
+This is an **MVP candidate**, not a guaranteed production `.splat` generator on every machine.
 
-## Demo mode
+The app now has the operational structure needed to produce and verify real splats, but actual `.splat` output still depends on a working Nerfstudio/COLMAP/CUDA environment and real test validation.
+
+## Quick start
 
 ```bash
 docker compose up --build
@@ -26,36 +29,41 @@ Open:
 http://localhost:5173
 ```
 
-## Real GPU/Nerfstudio mode
+## Real Mode
 
 ```bash
-MAKER_SPLAT_REAL_MODE=1 docker compose -f docker-compose.yml -f docker-compose.gpu.yml up --build
+MAKER_SPLAT_ENGINE=nerfstudio MAKER_SPLAT_REAL_MODE=1 docker compose up --build
 ```
 
-Then open:
+## First verified splat run
+
+Add 40–80 photos to:
 
 ```text
-http://localhost:5173
+datasets/first-splat/images/
 ```
 
-## QA
+Then run:
 
 ```bash
-./qa/run-all.sh
+./qa/run-real-mode-dataset.sh datasets/first-splat
 ```
 
-## Real-mode expectations
+## MVP checks
 
-Real mode requires:
+```bash
+./qa/mvp-check.sh
+```
 
-- NVIDIA GPU
-- NVIDIA Container Toolkit
-- compatible host NVIDIA driver
-- ffmpeg
-- COLMAP
-- Nerfstudio
-- `ns-process-data`
-- `ns-train`
-- `ns-export`
+## Packaging
 
-Start with **Balanced** quality on a dataset of 30–150 overlapping images.
+Packaging scaffolds are in:
+
+```text
+packaging/
+  macos/
+  windows/
+  linux/
+```
+
+They are starter scripts/specs, not signed production installers.

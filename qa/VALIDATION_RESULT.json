@@ -1,11 +1,40 @@
 {
   "python_syntax": {
-    "errors.py": "ok",
-    "preflight.py": "ok",
-    "server.py": "ok",
-    "pipeline.py": "ok",
-    "fallback_splat.py": "ok",
-    "quality.py": "ok"
+    "backend/app.py": "ok",
+    "backend/system_check.py": "ok",
+    "backend/errors.py": "ok",
+    "backend/pipeline.py": "  File \"/mnt/data/maker_splat_mvp_candidate/backend/pipeline.py\", line 77\n    \"has_splat\": (root/\"scene.splat\").exists(),\\n        \"first_splat_candidate\": True,\\n        \"validation_manifest\": (root/\"validation_manifest.json\").exists(),\\n        \"validation_report\": (root/\"VALIDATION_REPORT.md\").exists(),\n                                                ^\nSyntaxError: unexpected character after line continuation character\n",
+    "backend/demo_ply.py": "ok",
+    "backend/quality.py": "ok",
+    "backend/capture_tools.py": "ok",
+    "backend/share_tools.py": "ok",
+    "backend/settings_store.py": "ok",
+    "backend/command_runner.py": "ok",
+    "backend/real_pipeline.py": "ok",
+    "backend/splat_converter.py": "ok",
+    "backend/tool_probe.py": "ok",
+    "backend/output_validator.py": "ok",
+    "backend/environment_report.py": "ok",
+    "backend/failure_classifier.py": "ok",
+    "backend/dependency_doctor.py": "ok",
+    "backend/job_state.py": "ok",
+    "backend/engines/__init__.py": "ok",
+    "backend/engines/base.py": "ok",
+    "backend/engines/demo.py": "ok",
+    "backend/engines/nerfstudio.py": "ok",
+    "backend/engines/registry.py": "ok",
+    "scripts/run_real_mode_dataset.py": "ok"
+  },
+  "required_files": {
+    "backend/dependency_doctor.py": true,
+    "backend/job_state.py": true,
+    "backend/output_validator.py": true,
+    "qa/mvp-check.sh": true,
+    "launch-linux.sh": true,
+    "packaging/README.md": true,
+    "docs/MVP_SCOPE.md": true,
+    "frontend/src/App.jsx": true,
+    "frontend/src/Preview.jsx": true
   },
   "notes": []
 }
