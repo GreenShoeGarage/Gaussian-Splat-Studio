@@ -1,0 +1,15 @@
+services:
+  backend:
+    build: ./backend
+    ports: ["8000:8000"]
+    volumes:
+      - ./backend/projects:/app/projects
+    environment:
+      - MAKER_SPLAT_REAL_MODE=${MAKER_SPLAT_REAL_MODE:-0}
+      - MAKER_SPLAT_FRAME_RATE=${MAKER_SPLAT_FRAME_RATE:-2}
+  frontend:
+    build: ./frontend
+    ports: ["5173:5173"]
+    environment:
+      - VITE_API=http://localhost:8000
+    depends_on: [backend]

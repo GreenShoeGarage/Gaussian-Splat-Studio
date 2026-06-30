@@ -1,0 +1,35 @@
+# Documentation Manifest
+
+- `docs/API.md`
+- `docs/ARCHITECTURE.md`
+- `docs/BUILDING.md`
+- `docs/CAMERA_GUIDE.md`
+- `docs/CAPTURE_GUIDE.md`
+- `docs/CONTRIBUTOR_GUIDE.md`
+- `docs/DATASETS.md`
+- `docs/DEPENDENCY_DOCTOR.md`
+- `docs/DEVELOPER_GUIDE.md`
+- `docs/DIAGNOSTICS.md`
+- `docs/ENGINE.md`
+- `docs/ENVIRONMENT.md`
+- `docs/EXPORTS.md`
+- `docs/FAILURE_GUIDE.md`
+- `docs/FAQ.md`
+- `docs/FIRST_SPLAT_CHECKLIST.md`
+- `docs/GLOSSARY.md`
+- `docs/INSTALLATION.md`
+- `docs/MVP_SCOPE.md`
+- `docs/PACKAGING.md`
+- `docs/PERFORMANCE.md`
+- `docs/PIPELINE.md`
+- `docs/QUICK_START.md`
+- `docs/README.md`
+- `docs/REAL_MODE.md`
+- `docs/REAL_MODE_TESTING.md`
+- `docs/RELEASE_PROCESS.md`
+- `docs/TROUBLESHOOTING.md`
+- `docs/USER_MANUAL.md`
+- `docs/V4_1_VERIFIED_RUNBOOK.md`
+- `docs/V4_REAL_VALIDATION.md`
+- `docs/VALIDATION.md`
+- `docs/VIEWER.md`
